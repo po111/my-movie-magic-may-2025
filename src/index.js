@@ -3,6 +3,7 @@ import handlebars from 'express-handlebars';
 
 import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
+import req from 'express/lib/request.js';
 
 //Init express instance
 const app = express();
@@ -27,6 +28,9 @@ app.set('views', './src/views');
 //Config routes
 app.use(homeController);
 app.use('/movies', movieController);
+app.all('*url', (req, res) => {
+    res.render('404');
+});   
 
 
 //Start express web server

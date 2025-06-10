@@ -30,4 +30,15 @@ movieController.get('/:movieId/details', ((req, res) => {
     res.render('details', {movie });
 }))
 
+movieController.get('/search', (req, res) => {
+    const movies = movieService.getAll();
+    res.render('search', {movies});
+
+})
+
+// movieController.post('/search', (req, res) => {
+//     console.log(TODO);
+//     res.end();
+// })
+
 export default movieController;
