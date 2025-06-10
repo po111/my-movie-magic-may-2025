@@ -1,5 +1,6 @@
 import express from 'express';
 import movieService from '../services/movieService.js';
+import req from 'express/lib/request.js';
 
 const movieController = express.Router();
 
@@ -17,5 +18,12 @@ movieController.post('/create', (req, res) => {
     //Redirect to home page
     res.redirect('/');
 });
+
+movieController.get('/:movieId/details', ((req, res) => {
+    //Get movie id from params
+    const movieId = req.params.movieId;
+
+    res.render('details');
+}))
 
 export default movieController;
