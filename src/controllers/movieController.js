@@ -25,8 +25,10 @@ movieController.get('/:movieId/details', ((req, res) => {
 
     //Get movie data
     const movie = movieService.getOne(movieId);
-    console.log(movie);
 
+    //Prepare rating view data
+    //const ratingStars = '&#x2605'.repeat(Math.floor(movie.rating));
+    
     res.render('details', {movie });
 }))
 
