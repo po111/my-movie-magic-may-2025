@@ -31,14 +31,15 @@ movieController.get('/:movieId/details', ((req, res) => {
 }))
 
 movieController.get('/search', (req, res) => {
-    const movies = movieService.getAll();
+    //Get querystring
+    const filter = req.query;
+
+    //Get All movies
+    const movies = movieService.getAll(filter);
     res.render('search', {movies});
 
 })
 
-// movieController.post('/search', (req, res) => {
-//     console.log(TODO);
-//     res.end();
-// })
+
 
 export default movieController;
