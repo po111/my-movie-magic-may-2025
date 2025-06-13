@@ -3,8 +3,8 @@ import {Schema, model} from 'mongoose';
 const movieSchema =  new Schema({
     title: String,
     category: String,
-    genre: stringify,
-    director: stringify,
+    genre: String,
+    director: String,
     year: Number,
     imageURL: String,
     rating: Number,
