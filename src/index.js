@@ -1,5 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
+import mongoose from 'mongoose';
 
 import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
@@ -24,6 +25,15 @@ app.engine('hbs', handlebars.engine({
         }
     }
 }));
+
+//Connect database
+try {
+    await mongoose.connect(`mongodb://localhost:27017`, {dbName: 'magic-movies-may2015'});
+    console.log('Successfully connected to DB!');
+} catch (err) {
+    console.log('Cannot connect to DB!');
+    console.log(err.message)
+}
 
 //Set default engine
 app.set('view engine', 'hbs');
