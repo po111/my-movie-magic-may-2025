@@ -23,6 +23,11 @@ app.engine('hbs', handlebars.engine({
           //  return '&#x2605;'.repeat(Math.floor(rating));            
             return '★'.repeat(Math.floor(rating));
         }
+    },
+    //Allow handlebars to use prototype methods and properties of the base mongoose docunent
+    runtimeOptions: {
+        allowProtoMethodsByDefault: true,
+        allowProtoPropertiesByDefault: true,
     }
 }));
 
