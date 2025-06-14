@@ -32,12 +32,12 @@ movieController.get('/:movieId/details', ((req, res) => {
     res.render('details', {movie });
 }))
 
-movieController.get('/search', (req, res) => {
+movieController.get('/search', async (req, res) => {
     //Get querystring
     const filter = req.query;
     
     //Get All movies
-    const movies = movieService.getAll(filter);
+    const movies = await movieService.getAll(filter);
     res.render('search', {movies, filter});
 
 })
