@@ -25,11 +25,11 @@ app.engine('hbs', handlebars.engine({
             return '★'.repeat(Math.floor(rating));
         }
     },
-    //Allow handlebars to use prototype methods and properties of the base mongoose docunent
+    // Allow handlebars to use prototyp methods and properties of the base mongoose document
     runtimeOptions: {
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true,
-    }
+    },
 }));
 
 //Connect database
