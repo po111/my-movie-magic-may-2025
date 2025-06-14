@@ -29,7 +29,7 @@ movieController.get('/:movieId/details', async (req, res) => {
     //Prepare rating view data
     //const ratingStars = '&#x2605'.repeat(Math.floor(movie.rating));
     
-    res.render('details', {movie });
+    res.render('movie/details', {movie });
 });
 
 movieController.get('/search', async (req, res) => {
