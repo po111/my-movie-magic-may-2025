@@ -33,8 +33,8 @@ const movieSchema =  new Schema({
     rating: {
         type: Number,
         required: [true, 'Rating is required!'],
-        min: 1,
-        max: 10,
+        min: [ 1, 'Rating is between 1 and 10'],
+        max: [10, 'Rating is between 1 and 10'],
     },
     description: {
         type: String,
