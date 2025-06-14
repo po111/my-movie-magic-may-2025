@@ -23,7 +23,7 @@ const movieSchema =  new Schema({
         type: Number,
         required: [true, 'Year is required!'],
         min: 1920,
-        max: [ maxYearAllowed, `Year cannot be further than ${maxYearAllowed}!`]
+        max: [ maxYearAllowed, `Year cannot be further than ${maxYearAllowed}!`],
     },
     imageUrl: {
         type: String,
@@ -39,7 +39,7 @@ const movieSchema =  new Schema({
     description: {
         type: String,
         required: [true, 'Description is required!'],
-        maxLength: [1000, 'Description is too long!']
+        maxLength: [1000, 'Description is too long!'],
         
 },    });
 
